@@ -82,7 +82,7 @@ python dualstrike_docking.py
 ### 2. Submit Sequence to AlphaFold
 *Note: Manual submission required due to lack of public API*
 
-1. Visit AlphaFold Protein Structure Database website
+1. [Visit AlphaFold Protein Server website](https://alphafoldserver.com/)
 2. Upload generated `npm_alk_fusion.fasta`
 3. Submit and await completion
 4. Download predicted structure (CIF format)
@@ -161,30 +161,14 @@ conda activate my-rdkit-env
 - [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
 
 ## Contact Information
-- Author: [Your Name]
-- Email: your.email@example.com
+- Author: Siraj Raval, o1-preview, Claude-3.5-Sonnet
+- Email: hello@sirajrvaval.com
 
 ## Disclaimer
 This script and associated instructions are provided for educational and research purposes. The DualStrike inhibitor is a hypothetical molecule used for demonstration. Always ensure compliance with all relevant laws, regulations, and ethical guidelines when conducting research.
 
-## Final Notes
-
-### Script Execution
-- Guided process with prompts for user input
-- Maximizes automation within API limitations
-
-### User-Friendly Design
-- Detailed code comments
-- Comprehensive README
-- Accessible to beginners
-
-### Reproducibility
-- Step-by-step instructions
-- Consistent results when following protocol
-
-### Known Limitations
-- Manual submission requirements for external services
-- Hypothetical nature of DualStrike inhibitor
+## License
+MIT LICENSE
 
 
 
