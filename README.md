@@ -1,6 +1,6 @@
 # DualStrike Docking Simulation
 
-This project performs a molecular docking simulation between the NPM-ALK fusion protein and the novel dual-site inhibitor, DualStrike, using AlphaFold for protein structure prediction and SwissDock for docking.
+This project performs a molecular docking simulation between the NPM-ALK fusion protein and the novel dual-site inhibitor, DualStrike, using AlphaFold for protein structure prediction and SwissDock for docking. It is for Siraj Raval's video on Youtube, and [HPC-AI](https://hpc-ai.com/) compute cloud was used for affordability. 
 
 ## **Table of Contents**
 
