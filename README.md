@@ -45,3 +45,147 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/yourusername/dualstrike_docking.git
    cd dualstrike_docking
+   ```
+2. Create a Virtual Environment (Optional but Recommended):
+  ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   ```
+3. Install the Required Packages:
+   ```bash
+   pip install biopython rdkit pandas numpy matplotlib requests
+   ```
+   Note: If you encounter issues installing RDKit via pip, refer to the official installation guide.
+
+## Running the Script
+
+### Making the Script Executable (Optional)
+```bash
+chmod +x dualstrike_docking.py
+```
+
+### Running Options
+```bash
+# Standard execution
+python dualstrike_docking.py
+
+# If made executable
+./dualstrike_docking.py
+```
+
+## Detailed Steps
+
+### 1. Prepare the NPM-ALK Fusion Protein Sequence
+- Script automatically writes the sequence to `npm_alk_fusion.fasta`
+- No manual action required
+
+### 2. Submit Sequence to AlphaFold
+*Note: Manual submission required due to lack of public API*
+
+1. Visit AlphaFold Protein Structure Database website
+2. Upload generated `npm_alk_fusion.fasta`
+3. Submit and await completion
+4. Download predicted structure (CIF format)
+5. Save as `npm_alk_fusion.cif` in script directory
+
+### 3. Process AlphaFold Output
+- Script converts CIF to PDB format
+- Ensure `npm_alk_fusion.cif` is in script directory
+- Generates `npm_alk_fusion.pdb`
+
+### 4. Prepare DualStrike Inhibitor Structure
+- Uses RDKit for 3D structure generation
+- Creates `dualstrike.sdf` from SMILES notation
+
+### 5. Perform SwissDock Docking
+*Note: Manual submission required*
+
+1. Visit SwissDock Web Interface
+2. Upload:
+   - Receptor: `npm_alk_fusion.pdb`
+   - Ligand: `dualstrike.sdf`
+3. Configure parameters (defaults acceptable)
+4. Submit and note Job ID
+5. Wait for completion
+
+### 6. Analyze and Visualize Results
+1. Download results archive from SwissDock
+2. Extract to folder (e.g., `SwissDock_results`)
+3. Provide results folder path when prompted
+4. Script generates statistics and visualizations
+
+## Understanding the Outputs
+
+### Binding Energy Statistics
+- Provides descriptive statistics:
+  - Mean
+  - Standard deviation
+  - Minimum/Maximum values
+
+### Visualization
+- Histogram of binding energy distribution
+
+### Output Files
+- `npm_alk_fusion.fasta`: Fusion protein sequence
+- `npm_alk_fusion.pdb`: Protein structure
+- `dualstrike.sdf`: Inhibitor structure
+- Results folder: Contains all SwissDock output files
+
+## Troubleshooting
+
+### RDKit Installation Issues
+```bash
+# Alternative installation via conda
+conda create -c conda-forge -n my-rdkit-env rdkit
+conda activate my-rdkit-env
+```
+
+### Common Issues
+- **Missing Files/Incorrect Paths**
+  - Verify file names and locations
+  - Check paths when prompted
+
+- **Script Errors**
+  - Check for missing dependencies
+  - Verify file formats
+
+- **Docking Issues**
+  - Review SwissDock error messages
+  - Verify file formatting
+
+## References
+- [AlphaFold Protein Structure Database](https://alphafold.ebi.ac.uk/)
+- [SwissDock Docking Server](http://www.swissdock.ch/)
+- [RDKit Documentation](https://www.rdkit.org/docs/)
+- [Biopython Documentation](https://biopython.org/wiki/Documentation)
+- [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
+
+## Contact Information
+- Author: [Your Name]
+- Email: your.email@example.com
+
+## Disclaimer
+This script and associated instructions are provided for educational and research purposes. The DualStrike inhibitor is a hypothetical molecule used for demonstration. Always ensure compliance with all relevant laws, regulations, and ethical guidelines when conducting research.
+
+## Final Notes
+
+### Script Execution
+- Guided process with prompts for user input
+- Maximizes automation within API limitations
+
+### User-Friendly Design
+- Detailed code comments
+- Comprehensive README
+- Accessible to beginners
+
+### Reproducibility
+- Step-by-step instructions
+- Consistent results when following protocol
+
+### Known Limitations
+- Manual submission requirements for external services
+- Hypothetical nature of DualStrike inhibitor
+
+
+
+   
